@@ -12,6 +12,7 @@ from array import array
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 
+#class is now external
 
 class MainPage(webapp.RequestHandler):
 
