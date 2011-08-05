@@ -39,3 +39,17 @@ class myClass:
         
         #and return result now
         return loadtime
+
+
+    @staticmethod
+    def dbreadmyurl(url):
+
+        greetings = db.GqlQuery("SELECT * "
+            "FROM lasttimetable "
+            "WHERE url IS '"+url+"' "
+            "ORDER BY date DESC LIMIT 1",
+                 db.Key.from_path('lasttimetable', 'default_lt'))
+
+        for greeting in greetings:
+            return greeting
+        
