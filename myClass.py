@@ -48,7 +48,7 @@ class myClass:
             "FROM lasttimetable "
             "WHERE url = '"+url+"' "
             "ORDER BY date DESC LIMIT 1",
-                 db.Key.from_path('lasttimetable', 'default_lt'))
+            db.Key.from_path('lasttimetable', 'default_lt'))
 
         for greeting in greetings:
             return greeting
