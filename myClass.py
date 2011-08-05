@@ -2,7 +2,7 @@ import urllib2
 import time
 from google.appengine.ext import db
 
-class Greeting(db.Model):
+class Lasttime(db.Model):
     url = db.StringProperty(multiline=False)
     content = db.StringProperty(multiline=True)
     date = db.DateTimeProperty(auto_now_add=True)
@@ -32,10 +32,9 @@ class myClass:
         loadtime = (time.time() - t0)/8
         
         
-        greeting = Greeting("tablename")
+        lasttime = Lasttime(  db.Key.from_path('lasttimetable', 'default_lt') )
 
-        greeting.url = url
-        greeting.content = loadtime
-        greeting.put()       
-        return loadtime 
-
+        lasttime.url = url
+        lasttime.content = loadtime
+        lasttime.put()       
+        return loadtime
