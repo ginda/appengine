@@ -53,3 +53,8 @@ class myClass:
         for greeting in greetings:
             return greeting
         
+        
+class lasttimetable(db.Model):
+    pass
+
+#http://stackoverflow.com/questions/5365454/why-does-this-fail-google-appengine-datastore-python
