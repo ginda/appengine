@@ -31,10 +31,11 @@ class myClass:
                 print(e)
         loadtime = (time.time() - t0)/8
         
-        
+        # STore results in Database now
         lasttime = Lasttime(  db.Key.from_path('lasttimetable', 'default_lt') )
-
         lasttime.url = url
         lasttime.content = str(loadtime)
         lasttime.put()       
+        
+        #and return result now
         return loadtime
