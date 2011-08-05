@@ -1,0 +1,7 @@
+indexes:
+
+- kind: lasttimetable
+  properties:
+  - name: url
+  - name: date
+    direction: desc
