@@ -46,7 +46,7 @@ class myClass:
 
         greetings = db.GqlQuery("SELECT * "
             "FROM lasttimetable "
-            "WHERE url IS '"+url+"' "
+            "WHERE url = '"+url+"' "
             "ORDER BY date DESC LIMIT 1",
                  db.Key.from_path('lasttimetable', 'default_lt'))
 
