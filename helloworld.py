@@ -1,13 +1,4 @@
-import shutil
-import os
-import datetime
-import math
-import time
-
 import myClass
-
-from array import array
-
 
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
@@ -17,11 +8,20 @@ from google.appengine.ext.webapp.util import run_wsgi_app
 class MainPage(webapp.RequestHandler):
 
     def get(self):
-       self.response.headers['Content-Type'] = 'text/plain'
-       x = myClass.myClass()
-       self.response.out.write("vd_: "+str( x.grabmyurl("http://www.vondir.de") )+" seconds to load file\n")
-       self.response.out.write("fb_: "+str( x.grabmyurl("http://www.farmbeds.com") )+" seconds to load file\n")
-       self.response.out.write("fb2: "+str( x.grabmyurl("http://www.farmbeds.com/test.wsgi") )+" seconds to load file\n")
+        self.response.headers['Content-Type'] = 'text/plain'
+        x = myClass.myClass()
+        self.response.out.write("i got as param -mode-:"+self.request.get("mode")+"\n")
+        if (self.request.get("mode") == "hello"):
+            self.response.out.write("hallo a")
+        else:
+            self.response.out.write("vd_: "+str( x.grabmyurl("http://www.vondir.de") )+" seconds to load file\n")
+            self.response.out.write("fb_: "+str( x.grabmyurl("http://www.farmbeds.com") )+" seconds to load file\n")
+            self.response.out.write("fb2: "+str( x.grabmyurl("http://www.farmbeds.com/test.wsgi") )+" seconds to load file\n")
+            self.response.out.write("fbxpy: "+str( x.grabmyurl("http://www.farmbeds.com/xml.wsgi") )+" seconds to load file\n")
+            self.response.out.write("fbxph: "+str( x.grabmyurl("http://www.farmbeds.com/test.php") )+" seconds to load file\n")
+            self.response.out.write("vdpl: "+str( x.grabmyurl("http://www.vondir.de/flash/flash_gallery/help.pl?catid=31") )+" seconds to load file\n")
+        
+            
 
 
 
