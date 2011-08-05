@@ -25,7 +25,7 @@ class MainPage(webapp.RequestHandler):
             #self.response.out.write("fbxph: "+str( x.grabmyurl("http://www.farmbeds.com/test.php") )+" seconds to load file<br>\n")
             #self.response.out.write("vdpl: "+str( x.grabmyurl("http://www.vondir.de/flash/flash_gallery/help.pl?catid=31") )+" seconds to load file<br>\n")
             #self.response.out.write("gaei: "+str( x.grabmyurl("http://avengo2.appspot.com/images/logor.png") )+" seconds to load file<br>\n")
-            self.response.out.write("gaea: o:"+x.dbreadmyurl("http://avengo2.appspot.com/?mode=hello")+" - n:"+str( x.grabmyurl("http://avengo2.appspot.com/?mode=hello") )+" seconds to load file<br>\n")
+            self.response.out.write("gaea: o:"+str(x.dbreadmyurl("http://avengo2.appspot.com/?mode=hello"))+" - n:"+str( x.grabmyurl("http://avengo2.appspot.com/?mode=hello") )+" seconds to load file<br>\n")
             
 
 
