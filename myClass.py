@@ -35,6 +35,6 @@ class myClass:
         lasttime = Lasttime(  db.Key.from_path('lasttimetable', 'default_lt') )
 
         lasttime.url = url
-        lasttime.content = loadtime
+        lasttime.content = str(loadtime)
         lasttime.put()       
         return loadtime
