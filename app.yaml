@@ -8,3 +8,9 @@ handlers:
   static_dir: images
 - url: /.*
   script: helloworld.py
+
+- kind: lasttimetable
+  properties:
+  - name: url
+  - name: date
+    direction: desc
