@@ -40,7 +40,6 @@ class myClass:
         #and return result now
         return loadtime
 
-
     @staticmethod
     def dbreadmyurl(url):
         # FROM referenziert wieder auf Klasse oben und gibt entpsrechende refs zurück!
