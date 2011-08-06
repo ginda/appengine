@@ -32,7 +32,7 @@ class myClass:
         loadtime = (time.time() - t0)/8
         
         # STore results in Database now
-        lasttime = Lasttime(  db.Key.from_path('lasttimetable', 'default_lt') )
+        lasttime = Lasttime(  db.Key.from_path('Lasttime', 'default_lt') ) #gleicher name wie klasse oben fuer tabelle!
         lasttime.url = url
         lasttime.content = str(loadtime)
         lasttime.put()       
@@ -43,17 +43,16 @@ class myClass:
 
     @staticmethod
     def dbreadmyurl(url):
-
-        greetings = db.GqlQuery("SELECT * "
-            "FROM lasttimetable "
+        # FROM referenziert wieder auf Klasse oben und gibt entpsrechende refs zurück!
+        lasttimes = db.GqlQuery("SELECT * "
+            "FROM Lasttime " 
             "WHERE url = '"+url+"' "
             "ORDER BY date DESC LIMIT 1")
 
-        for greeting in greetings:
-            return greeting
+        for lasttime in lasttimes:
+            return lasttime.content
         
         
-class lasttimetable(db.Model):
-    pass
+
 
 #http://stackoverflow.com/questions/5365454/why-does-this-fail-google-appengine-datastore-python
