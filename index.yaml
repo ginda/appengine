@@ -1,5 +1,2 @@
 indexes:
 
-- kind: Lasttime
-  properties:
-  - name: url
