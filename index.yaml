@@ -1,7 +1,5 @@
 indexes:
 
-- kind: lasttimetable
+- kind: Lasttime
   properties:
   - name: url
-  - name: date
-    direction: desc
