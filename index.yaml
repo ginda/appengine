@@ -3,3 +3,5 @@ indexes:
 - kind: Lasttime
   properties:
   - name: url
+  - name: date
+    direction: desc
